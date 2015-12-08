@@ -19,6 +19,7 @@ defmodule Mousiki.Router do
     get "/", PageController, :index
     resources "/artists", ArtistController
     resources "/albums", AlbumController
+    resources "/songs", SongController
   end
 
   # Other scopes may use custom stacks.
