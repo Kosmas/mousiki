@@ -1,0 +1,13 @@
+<h2>Show format</h2>
+
+<ul>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @format.description %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: format_path(@conn, :edit, @format) %>
+<%= link "Back", to: format_path(@conn, :index) %>

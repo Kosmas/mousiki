@@ -1,0 +1,26 @@
+<h2>Listing formats</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for format <- @formats do %>
+    <tr>
+      <td><%= format.description %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: format_path(@conn, :show, format), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: format_path(@conn, :edit, format), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: format_path(@conn, :delete, format), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New format", to: format_path(@conn, :new) %>
