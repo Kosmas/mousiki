@@ -21,6 +21,7 @@ defmodule Mousiki.Router do
     resources "/albums", AlbumController
     resources "/songs", SongController
     resources "/genres", GenreController
+    resources "/formats", FormatController
   end
 
   # Other scopes may use custom stacks.
