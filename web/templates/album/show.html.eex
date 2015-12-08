@@ -1,0 +1,38 @@
+<h2>Show album</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @album.title %>
+  </li>
+
+  <li>
+    <strong>Disc:</strong>
+    <%= @album.disc_id %>
+  </li>
+
+  <li>
+    <strong>Year:</strong>
+    <%= @album.year %>
+  </li>
+
+  <li>
+    <strong>Genre:</strong>
+    <%= @album.genre %>
+  </li>
+
+  <li>
+    <strong>Format:</strong>
+    <%= @album.format %>
+  </li>
+
+  <li>
+    <strong>Owned:</strong>
+    <%= @album.owned %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: album_path(@conn, :edit, @album) %>
+<%= link "Back", to: album_path(@conn, :index) %>
