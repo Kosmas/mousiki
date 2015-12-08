@@ -1,0 +1,30 @@
+<h2>Listing artists</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Full name</th>
+      <th>First name</th>
+      <th>Last name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for artist <- @artists do %>
+    <tr>
+      <td><%= artist.full_name %></td>
+      <td><%= artist.first_name %></td>
+      <td><%= artist.last_name %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: artist_path(@conn, :show, artist), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: artist_path(@conn, :edit, artist), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: artist_path(@conn, :delete, artist), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New artist", to: artist_path(@conn, :new) %>

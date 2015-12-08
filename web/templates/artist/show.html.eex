@@ -1,0 +1,23 @@
+<h2>Show artist</h2>
+
+<ul>
+
+  <li>
+    <strong>Full name:</strong>
+    <%= @artist.full_name %>
+  </li>
+
+  <li>
+    <strong>First name:</strong>
+    <%= @artist.first_name %>
+  </li>
+
+  <li>
+    <strong>Last name:</strong>
+    <%= @artist.last_name %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: artist_path(@conn, :edit, @artist) %>
+<%= link "Back", to: artist_path(@conn, :index) %>
