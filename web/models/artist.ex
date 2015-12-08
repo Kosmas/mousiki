@@ -9,8 +9,8 @@ defmodule Mousiki.Artist do
     timestamps
   end
 
-  @required_fields ~w(full_name first_name last_name)
-  @optional_fields ~w()
+  @required_fields ~w(full_name)
+  @optional_fields ~w(first_name last_name)
 
   @doc """
   Creates a changeset based on the `model` and `params`.

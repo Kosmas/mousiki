@@ -3,7 +3,7 @@ defmodule Mousiki.ArtistTest do
 
   alias Mousiki.Artist
 
-  @valid_attrs %{first_name: "some content", full_name: "some content", last_name: "some content"}
+  @valid_attrs %{first_name: "John", full_name: "John Somebody", last_name: "Somebody"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
@@ -14,5 +14,15 @@ defmodule Mousiki.ArtistTest do
   test "changeset with invalid attributes" do
     changeset = Artist.changeset(%Artist{}, @invalid_attrs)
     refute changeset.valid?
+  end
+
+  test "first_name is not required" do
+    changeset = Artist.changeset(%Artist{}, Map.delete(@valid_attrs, :first_name))
+    assert changeset.valid?
+  end
+
+  test "last_name is not required" do
+    changeset = Artist.changeset(%Artist{}, Map.delete(@valid_attrs, :last_name))
+    assert changeset.valid?
   end
 end
