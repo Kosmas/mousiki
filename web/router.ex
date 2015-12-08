@@ -17,6 +17,7 @@ defmodule Mousiki.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    resources "/artists", ArtistController
   end
 
   # Other scopes may use custom stacks.
