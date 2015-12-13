@@ -8,6 +8,7 @@ defmodule Mousiki.Album do
     field :genre, :integer
     field :format, :integer
     field :owned, :boolean, default: false
+    belongs_to :artist, Mousiki.Artist
 
     timestamps
   end

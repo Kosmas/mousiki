@@ -5,6 +5,7 @@ defmodule Mousiki.Artist do
     field :full_name, :string
     field :first_name, :string
     field :last_name, :string
+    has_many :albums, Mousiki.Album
 
     timestamps
   end
