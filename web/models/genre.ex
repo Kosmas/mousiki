@@ -3,6 +3,7 @@ defmodule Mousiki.Genre do
 
   schema "genres" do
     field :description, :string
+    has_many :albums, Mousiki.Album
 
     timestamps
   end
