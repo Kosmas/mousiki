@@ -5,6 +5,7 @@ defmodule Mousiki.Song do
     field :disc_no, :integer
     field :title, :string
     field :duration, :integer
+    belongs_to :album, Mousiki.Album
 
     timestamps
   end

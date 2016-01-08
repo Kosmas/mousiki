@@ -9,6 +9,7 @@ defmodule Mousiki.Album do
     field :format, :integer
     field :owned, :boolean, default: false
     belongs_to :artist, Mousiki.Artist
+    has_many :songs, Mousiki.Song
 
     timestamps
   end
