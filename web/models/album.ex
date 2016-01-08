@@ -5,7 +5,6 @@ defmodule Mousiki.Album do
     field :title, :string
     field :disc_id, :string
     field :year, Ecto.Date
-    field :genre, :integer
     field :format, :integer
     field :owned, :boolean, default: false
     belongs_to :artist, Mousiki.Artist
@@ -15,7 +14,7 @@ defmodule Mousiki.Album do
     timestamps
   end
 
-  @required_fields ~w(title disc_id year genre format owned)
+  @required_fields ~w(title disc_id year genre_id format owned)
   @optional_fields ~w()
 
   @doc """
