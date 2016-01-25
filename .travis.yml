@@ -1,0 +1,6 @@
+language: elixir
+otp_release:
+  - 18.1
+after_script:
+  - MIX_ENV=test mix deps.get
+  - MIX_ENV=test mix inch.report
