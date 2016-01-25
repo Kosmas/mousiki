@@ -4,7 +4,7 @@ defmodule Mousiki.Mixfile do
   def project do
     [app: :mousiki,
      version: "0.0.1",
-     elixir: "~> 1.0",
+     elixir: "~> 1.2.1",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
@@ -30,7 +30,7 @@ defmodule Mousiki.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.0.4"},
+    [{:phoenix, "~> 1.1.4"},
      {:phoenix_ecto, "~> 2.0.1"},
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.1"},
