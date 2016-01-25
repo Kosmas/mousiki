@@ -3,7 +3,7 @@ defmodule Mousiki.AlbumTest do
 
   alias Mousiki.Album
 
-  @valid_attrs %{disc_id: "some content", format: 42, genre: 42, owned: true, title: "some content", year: "2010-04-17"}
+  @valid_attrs %{disc_id: "some content", format: 42, genre_id: 42, owned: true, title: "some content", year: "2010-04-17"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
