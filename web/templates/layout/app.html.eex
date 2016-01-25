@@ -15,7 +15,11 @@
     <div class="container" role="main">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+          <li><%= link "Artists", to: artist_path(@conn, :index) %></li>
+          <li><%= link "Albums", to: album_path(@conn, :index) %></li>
+          <li><%= link "Songs", to: song_path(@conn, :index) %></li>
+          <li><%= link "Formats", to: format_path(@conn, :index) %></li>
+          <li><%= link "Genres", to: genre_path(@conn, :index) %></li>
         </ul>
         <span class="logo"></span>
       </div>
