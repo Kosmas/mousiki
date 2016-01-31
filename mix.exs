@@ -36,7 +36,7 @@ defmodule Mousiki.Mixfile do
      {:phoenix_html, "~> 2.1"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:cowboy, "~> 1.0"},
-     {:inch_ex, only: :test}
+     {:inch_ex, "~> 0.5.1", only: :test}
      ]
   end
 
