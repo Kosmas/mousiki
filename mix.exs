@@ -10,7 +10,10 @@ defmodule Mousiki.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      aliases: aliases,
-     deps: deps]
+     deps: deps,
+     test_coverage: [tool: ExCoveralls],
+     preferred_cli_env: ["coveralls": :test, "coveralls.detail": :test, "coveralls.post": :test, "coveralls.html": :test],
+    ]
   end
 
   # Configuration for the OTP application.
@@ -36,7 +39,8 @@ defmodule Mousiki.Mixfile do
      {:phoenix_html, "~> 2.1"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:cowboy, "~> 1.0"},
-     {:inch_ex, "~> 0.5.1", only: :test}
+     {:inch_ex, "~> 0.5.1", only: :test},
+     {:excoveralls, "~> 0.5.6", only: :test}
      ]
   end
 
