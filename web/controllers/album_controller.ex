@@ -1,7 +1,7 @@
 defmodule Mousiki.AlbumController do
   use Mousiki.Web, :controller
 
-  alias Mousiki.Album
+  alias Mousiki.{Album, Repo}
 
   plug :scrub_params, "album" when action in [:create, :update]
 

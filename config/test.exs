@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :mousiki, Mousiki.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "phoenix",
+  password: "xineohp",
   database: "mousiki_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

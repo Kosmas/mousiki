@@ -31,8 +31,10 @@ defmodule Mousiki.ChannelCase do
   end
 
   setup tags do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Mousiki.Repo)
+
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(Mousiki.Repo, [])
+      Ecto.Adapters.SQL.Sandbox.mode(Mousiki.Repo, {:shared, self()})
     end
 
     :ok
