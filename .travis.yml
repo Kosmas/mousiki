@@ -5,7 +5,7 @@ otp_release:
   - 19.1
 env:
   - MIX_ENV=test
-script: mix coveralls.travis
+#script: mix coveralls.travis
 after_script:
   - MIX_ENV=test mix deps.get
   - MIX_ENV=test mix inch.report
