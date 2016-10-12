@@ -1,3 +1,4 @@
+require IEx
 defmodule Mousiki.ArtistControllerTest do
   use Mousiki.ConnCase, asyn: true
 
@@ -18,6 +19,11 @@ defmodule Mousiki.ArtistControllerTest do
     assert response =~ "Cale"
     assert response =~ "Peter"
     assert response =~ "Gabriel"
+  end
+
+  describe "create/2" do
+    test "Creates, and responds with a newly created artist if attributes are valid"
+    test "Returns an error and does not create an artist if attributes are invalid"
   end
 
   describe "show/2" do
@@ -41,6 +47,24 @@ defmodule Mousiki.ArtistControllerTest do
     end
   end
 
+  describe "update/2" do
+    test "Edits, and responds with the artist if attributes are valid"
+    test "Returns an error and does not edit the artist if attributes are invalid"
+  end
+
+  test "delete/2 and responds with :ok if the artist was deleted", %{conn: conn} do
+    artist = Artist.changeset(%Artist{}, %{first_name: "Nick", full_name: "Cave"})
+    |> Repo.insert!
+
+    response = conn
+    |> delete(artist_path(conn, :delete, artist))
+    |> html_response(302)
+
+    assert response =~"<html><body>You are being <a href=\"/artists\">redirected</a>.</body></html>"
+    refute Repo.get(Artist, artist.id)
+  end
+
+
 #  alias Mousiki.Artist
 #  @valid_attrs %{first_name: "some content", full_name: "some content", last_name: "some content"}
 #  @invalid_attrs %{}
@@ -48,11 +72,6 @@ defmodule Mousiki.ArtistControllerTest do
 #  setup do
 #    conn = conn()
 #    {:ok, conn: conn}
-#  end#
-#
-#  test "lists all entries on index", %{conn: conn} do
-#    conn = get conn, artist_path(conn, :index)
-#    assert html_response(conn, 200) =~ "Listing artists"
 #  end#
 #
 #  test "renders form for new resources", %{conn: conn} do
@@ -101,11 +120,4 @@ defmodule Mousiki.ArtistControllerTest do
 #    conn = put conn, artist_path(conn, :update, artist), artist: @invalid_attrs
 #    assert html_response(conn, 200) =~ "Edit artist"
 #  end#
-#
-#  test "deletes chosen resource", %{conn: conn} do
-#    artist = Repo.insert! %Artist{}
-#    conn = delete conn, artist_path(conn, :delete, artist)
-#    assert redirected_to(conn) == artist_path(conn, :index)
-#    refute Repo.get(Artist, artist.id)
-#  end
 end
