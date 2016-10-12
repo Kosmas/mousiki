@@ -34,7 +34,11 @@ defmodule Mousiki.ArtistControllerTest do
       assert response =~ "Cale"
     end
 
-    test "Responds with a message indicating artist not found"
+    test "Responds with a message indicating artist not found", %{conn: conn} do
+      assert_raise Ecto.NoResultsError, fn ->
+        get conn, artist_path(conn, :show, -1)
+      end
+    end
   end
 
 #  alias Mousiki.Artist
