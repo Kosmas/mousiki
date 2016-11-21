@@ -37,7 +37,7 @@ defmodule Mousiki.Mixfile do
      {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_ecto, "~> 3.0.1"},
      {:postgrex, ">= 0.12.1"},
-     {:phoenix_html, "~> 2.7.0"},
+     {:phoenix_html, "~> 2.8.0"},
      {:phoenix_live_reload, "~> 1.0.5", only: :dev},
      {:cowboy, "~> 1.0.4"},
      {:inch_ex, "~> 0.5.4", only: :test}
